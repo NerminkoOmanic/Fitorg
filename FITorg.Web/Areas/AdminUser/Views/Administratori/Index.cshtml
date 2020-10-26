@@ -1,0 +1,49 @@
+﻿@model FITorg.Web.Areas.AdminUser.ViewModels.AdministratoriIndexVM
+@{
+    ViewData["Title"] = "Fitorg";
+    Layout = "_LayoutAdmin";
+}
+<h2>Lista administratora</h2>
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Lista administratora koji odrzavaju aplikaciju
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Ime i prezime</th>
+                        <th>E-mail</th>
+                        <th>Broj mobitela</th>
+                        <th>Grad</th>
+                        <th>Drzava</th>
+                        <th>Izjava o zastiti podataka</th>
+                        <th>Akcije</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var x in Model.Rows)
+                    {
+                        <tr>
+                            <td>@x.ImePrezime</td>
+                            <td>@x.Email</td>
+                            <td>@x.BrojMob</td>
+                            <td>@x.NazivGrada</td>
+                            <td>@x.NazivDrzave</td>
+                            <td>@x.IzjavaOZastitiPodatak</td>
+                            <td style="width: 20%">
+                                <a asp-action="Uredi" asp-controller="Administratori" asp-route-id="@x.AdminId" class="btn btn-info font-sizes"><i class="fas fa-search icons-margin-right"></i> Uredi</a>
+                                <a asp-action="Obrisi" asp-controller="Administratori" asp-route-id="@x.AdminId" class="btn btn-danger font-sizes"><i class="fas fa-delete icons-margin-right"></i> Obriši</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<a asp-action="Dodaj" asp-controller="Administratori" class="btn btn-success  col-md-2 font-sizes float-right"><i class="fas fa-plus-circle icons-margin-right"></i> Dodaj admina</a>
+
+

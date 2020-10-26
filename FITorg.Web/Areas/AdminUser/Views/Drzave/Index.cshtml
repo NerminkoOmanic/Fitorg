@@ -1,0 +1,37 @@
+﻿@model FITorg.Web.Areas.AdminUser.ViewModels.DrzaveIndexVM
+@{
+    ViewData["Title"] = "Fitorg";
+    Layout = "_LayoutAdmin";
+}
+<h2>Lista država</h2>
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Lista drzava za odabir
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>Naziv</th>
+                    <th>Akcije</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var x in Model.Rows)
+                {
+                    <tr>
+                        <td style="width: 80%">@x.Naziv</td>
+                        <td>
+                            <a asp-action="Uredi" asp-controller="Drzave" asp-route-id="@x.DrzavaId" class="btn btn-info font-sizes"><i class="fas fa-edit icons-margin-right"></i> Uredi </a>
+                            <a asp-action="Obrisi" asp-controller="Drzave" asp-route-id="@x.DrzavaId" class="btn btn-danger font-sizes"><i class="fas fa-minus icons-margin-right"></i> Obriši </a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<a asp-action="Dodaj" asp-controller="Drzave" class="btn btn-success  col-md-2 font-sizes float-right"><i class="fas fa-plus-circle icons-margin-right"></i> Dodaj državu</a>

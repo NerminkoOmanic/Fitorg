@@ -1,0 +1,19 @@
+﻿@model FITorg.Web.Areas.AdminUser.ViewModels.DrzaveDodajVM
+@{
+    ViewData["Title"] = "Fitorg";
+    Layout = "_LayoutAdmin";
+}
+<h2>Dodajte novu državu</h2>
+<form asp-action="Dodaj" asp-controller="Drzave" method="post">
+    <input type="hidden" value="@Model.DrzavaId" name="DrzavaId" />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label>Naziv države: </label>
+                <input asp-for="@Model.Naziv" class="form-control  col-md-12" type="text" placeholder="Unesite naziv države: " required />
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Spremi</button>
+</form>
+

@@ -1,0 +1,19 @@
+﻿@model FITorg.Web.Areas.AdminUser.ViewModels.SpolDodajVM
+@{
+    ViewData["Title"] = "Fitorg";
+    Layout = "_LayoutAdmin";
+}
+<h2>Uredite spol</h2>
+<form asp-action="Dodaj" asp-controller="Spol" method="post">
+    <input type="hidden" value="@Model.SpolId" name="SpolId" />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label>Spol : </label>
+                <input asp-for="@Model.Naziv" class="form-control  col-md-12" type="text" placeholder="Unesite naziv države: " required />
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Spremi</button>
+</form>
+

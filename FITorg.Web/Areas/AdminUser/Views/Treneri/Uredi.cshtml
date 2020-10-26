@@ -1,0 +1,68 @@
+﻿@model FITorg.Web.Areas.AdminUser.ViewModels.TreneriUrediVM
+@{
+    ViewData["Title"] = "Fitorg";
+    Layout = "_LayoutAdmin";
+    var poruka = (string)TempData["poruka"];
+
+}
+@if (poruka != null)
+{
+    <div class="alert alert-success" role="alert" id="porukaBox">
+        @poruka
+    </div>
+}
+<h2>Uredite @Model.Ime @Model.Prezime</h2>
+<form asp-action="Uredi" asp-controller="Treneri" method="post">
+    <input type="hidden" value="@Model.TrenerID" asp-for="TrenerID" />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label asp-for="@Model.Ime">Ime</label>
+                <input asp-for="@Model.Ime" class="form-control  col-md-12" type="text" placeholder="@Model.Ime " required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label asp-for="@Model.Prezime">Prezime</label>
+                <input asp-for="@Model.Prezime" class="form-control  col-md-12" type="text" placeholder="@Model.Prezime" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label asp-for="@Model.Email">E-mail</label>
+                <input asp-for="@Model.Email" class="form-control  col-md-12" type="email" placeholder="@Model.Email" required />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label asp-for="@Model.DatumRodjenja">Datum rođenja</label>
+                <input asp-for="@Model.DatumRodjenja" class="form-control  col-md-12" type="date" placeholder="@Model.DatumRodjenja" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label asp-for="@Model.GradId">Grad</label>
+                <select asp-for="@Model.GradId" asp-items="@Model.GradoviItems" class="form-control select2-container">
+                    <option value="">Odaberite grad</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label>Država</label>
+                <span class="form-control col-md-12">@Model.Drzava</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label asp-for="@Model.SpolId">Spol</label>
+                <select asp-for="@Model.SpolId" asp-items="@Model.SpolItems" class="form-control select2-container">
+                    <option value="">Odaberite spol</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Spremi</button>
+    </div>
+</form>
+

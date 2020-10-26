@@ -1,0 +1,53 @@
+﻿@model FITorg.Web.Areas.TrUser.ViewModels.TreneriPrikaziVM
+@{
+    ViewData["Title"] = "Fitorg";
+    Layout = "_LayoutTrener";
+}
+
+<div class="h4 text-center"><h2>@Model.Ime @Model.Prezime</h2></div>
+<div class="row pv-lg">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+            <div class="form-group">
+                <label class="col-sm-3 control-label" >Ime : </label>
+                <label class="col-sm-4 control-label" >@Model.Ime</label>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="col-sm-3 control-label" >Prezime : </label>
+                <label class="col-sm-4 control-label" >@Model.Prezime</label>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Email : </label>
+                <label class="col-sm-4 control-label" >@Model.Email</label>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Mob : </label>
+                <label class="col-sm-4 control-label" >@Model.Mob</label>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Datum rođenja  : </label>
+                <label class="col-sm-4 control-label" >@Model.DatumRodjenja</label>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="">Grad  : </label>
+                <label class="col-sm-4 control-label" for="">@Model.GradNaziv</label>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="">Drzava  : </label>
+                <label class="col-sm-4 control-label" for="">@Model.DrzavaNaziv</label>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="">Spol  : </label>
+                <label class="col-sm-4 control-label" for="">@Model.SpolNaziv</label>
+            </div>
+            <hr />
+            <a asp-action="Uredi" asp-controller="Home" asp-route-id="@Model.TrenerID" class="btn btn-info"><i class="fas fa-edit"></i>Uredi</a>
+    </div>
+</div>

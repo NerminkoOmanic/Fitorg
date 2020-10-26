@@ -1,0 +1,47 @@
+﻿@page
+@model TwoFactorAuthenticationModel
+@{
+    ViewData["Title"] = "Two-factor authentication (2FA)";
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+            <span class="login100-form-title p-b-33">
+                @ViewData["Title"]
+            </span>
+
+            <h5>Authenticator app</h5>
+            <br />
+            @if (!Model.HasAuthenticator)
+            {
+                <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-primary">Add authenticator app</a>
+            }
+            else
+            {
+                <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-primary">Setup authenticator app</a>
+                <br />
+                <br />
+
+                <a id="reset-authenticator" asp-page="./ResetAuthenticator" class="btn btn-primary">Reset authenticator app</a>
+            }
+            <br />
+            <br />
+
+            @if (Model.UserRole == "Administrator")
+            {
+                <a asp-area="AdminUser" asp-controller="Home" asp-action="Index" class="btn btn-secondary" style="float:right">Back to profile</a>
+            }
+            else
+            {
+                <a asp-area="TrUser" asp-controller="Home" asp-action="Index" asp-route-id="@Model.UserId" class="btn btn-secondary" style="float:right">Back to profile</a>
+
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,128 @@
+﻿@model FITorg.Web.Areas.AdminUser.ViewModels.TreneriUrediVM
+@{
+    ViewData["Title"] = "Fitorg";
+    Layout = "_LayoutTrener";
+}
+
+<div class="h4 text-center">Uredi osnovne podatke</div>
+<form asp-action="Uredi" asp-controller="Home" method="post">
+    <input hidden="hidden" asp-for="TrenerID" value="@Model.TrenerID"  />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label asp-for="@Model.Ime">Ime</label>
+                <input asp-for="@Model.Ime" class="form-control  col-md-12" type="text" placeholder="@Model.Ime " required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label asp-for="@Model.Prezime">Prezime</label>
+                <input asp-for="@Model.Prezime" class="form-control  col-md-12" type="text" placeholder="@Model.Prezime" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                <label asp-for="@Model.Email">E-mail</label>
+                <input asp-for="@Model.Email" class="form-control  col-md-12" type="email" placeholder="@Model.Email" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label asp-for="@Model.Mob">Broj mobitela</label>
+                <input asp-for="@Model.Mob" class="form-control  col-md-12" type="text" placeholder="@Model.Mob" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label asp-for="@Model.DatumRodjenja">Datum rođenja</label>
+                <input asp-for="@Model.DatumRodjenja" class="form-control  col-md-12" type="date" placeholder="@Model.DatumRodjenja" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label>Grad</label>
+                <select asp-for="@Model.GradId" asp-items="@Model.GradoviItems" class="form-control col-md-12">
+                    <option value="">Odaberite grad</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label>Država</label>
+                <span class="form-control col-md-12">@Model.Drzava</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label asp-for="@Model.SpolId">Spol</label>
+                <select asp-for="@Model.SpolId" asp-items="@Model.SpolItems" class="form-control col-md-12">
+                    <option value="">Odaberite spol</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Spremi</button>
+    </div>
+</form>
+
+@*
+<div class="row pv-lg">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <form class="form-horizontal ng-pristine ng-valid" asp-controller="Home" asp-action ="Uredi" method="post" >
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="">Ime</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" placeholder="" value="Audrey">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="">Prezime</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" placeholder="" value=" Hunt">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="email" value="mail@example.com">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="">Mob</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" value="+38763487713">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="">Datum</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="date" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="">Grad</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" value="Grad">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="">Drzava</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" value="Drzava">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="">Spol</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" value="Spol">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn btn-info float-md-none" type="submit">Snimi</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+*@

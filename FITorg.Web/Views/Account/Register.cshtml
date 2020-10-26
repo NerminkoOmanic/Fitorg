@@ -1,0 +1,95 @@
+﻿@model FITorg.Web.Models.TrenerRegVM
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "_LayoutLogin";
+    var poruka = (string)TempData["poruka"];
+
+}
+@if (poruka != null)
+{
+    <div class="alert alert-success" role="alert" id="porukaBox">
+        @poruka
+    </div>
+}
+
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+            <form class="login100-form validate-form" asp-action="RegisterT" method="post">
+                <span class="login100-form-title p-b-33">
+                    <img src="\images\logo2.png" width="150" height="150" />
+                </span>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label">Ime</label>
+                    <div class="col-sm-7">
+                        <input asp-for="@Model.Ime" class="form-control" type="text" placeholder="Unesite ime" required />
+                        <span asp-validation-for="Ime" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label">Prezime</label>
+                    <div class="col-sm-7">
+                        <input asp-for="@Model.Prezime" class="form-control" type="text" placeholder="Unesite prezime" required />
+                        <span asp-validation-for="Prezime" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label">Password</label>
+                    <div class="col-sm-7">
+                        <input asp-for="@Model.Password" class="form-control" placeholder="Password" required />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label">Confirm password</label>
+                    <div class="col-sm-7">
+                        <input asp-for="@Model.ConfirmPassword" class="form-control" placeholder="Confirm password" required />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <label class="col-sm-5 col-form-label">E-mail</label>
+                    <div class="col-sm-7">
+                        <input asp-for="@Model.Email" class="form-control" type="email" placeholder="Unesite email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label">Datum rođenja</label>
+                    <div class="col-sm-7">
+                        <input asp-for="@Model.DatumRodjenja" class="form-control" type="date" placeholder="Odaberite datum" required />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label">Grad</label>
+                    <div class="col-sm-7">
+                        <select asp-for="@Model.GradId" asp-items="Model.GradoviItems" class="form-control select2-container" required>
+                            <option value="">Odaberite grad</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label">Spol</label>
+                    <div class="col-sm-7">
+                        <select asp-for="@Model.SpolId" asp-items="Model.SpolItems" class="form-control select2-container" required>
+                            <option value="">Odaberite spol</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="container-login100-form-btn m-t-20">
+                    <button type="submit" class="login100-form-btn">
+                        Register
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

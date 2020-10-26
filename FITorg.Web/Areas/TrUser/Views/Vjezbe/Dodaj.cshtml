@@ -1,0 +1,27 @@
+﻿@model FITorg.Web.Areas.TrUser.ViewModels.VjezbeDodajVM
+@{
+    ViewData["Title"] = "Fitorg";
+    Layout = "_LayoutTrener";
+}
+
+<div class="h4 text-center">Dodaj vjezbu</div>
+<form asp-action="Dodaj" asp-controller="Vjezbe" method="post">
+    <input type="hidden" asp-for="AppUserId" value="@Model.AppUserId"  />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label asp-for="@Model.Naziv">Naziv vjezbe</label>
+                <input asp-for="@Model.Naziv" class="form-control  col-md-12" type="text" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label asp-for="@Model.videoUrl">Link na video</label>
+                <input asp-for="@Model.videoUrl" class="form-control  col-md-12" type="text" placeholder="@Model.videoUrl" required />
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-success">Spremi</button>
+    </div>
+</form>
+

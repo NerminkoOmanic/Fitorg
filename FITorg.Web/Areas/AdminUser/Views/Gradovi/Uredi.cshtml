@@ -1,0 +1,27 @@
+﻿@model FITorg.Web.Areas.AdminUser.ViewModels.GradoviDodajVM
+@{
+    ViewData["Title"] = "Fitorg";
+    Layout = "_LayoutAdmin";
+}
+<h2>Uredite @Model.Naziv</h2>
+<form asp-action="Dodaj" asp-controller="Gradovi" method="post">
+    <input type="hidden" value="@Model.GradId" name="GradId" />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label asp-for="@Model.Naziv">Naziv grada</label>
+                <input asp-for="@Model.Naziv" class="form-control  col-md-12" type="text" placeholder="Unesite naziv grada: " required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 form-group">
+                <label asp-for="@Model.DrzavaId">Izaberite državu</label>
+                <select asp-for="@Model.DrzavaId" asp-items="@Model.DrzaveItems" class="form-control col-md-12">
+                    <option value="">Odaberite drzavu</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Spremi</button>
+    </div>
+</form>
+

@@ -1,0 +1,52 @@
+﻿@using System.Security.Claims
+@model FITorg.Web.Areas.TrUser.ViewModels.VjezbeIndexVM
+@{
+    ViewData["Title"] = "Fitorg";
+    Layout = "_LayoutTrener";
+}
+
+@{
+    ViewData["Title"] = "Prikazi";
+
+
+}
+
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Lista vjezbi
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Link</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var x in Model.Rows)
+                    {
+                        <tr>
+                            <td style="width: 24%">@x.Naziv</td>
+                            <td style="width: 50%"><a asp-controller="Vjezbe" asp-action="PrikaziVideoPV" asp-route-url="@x.videoUrl" ajax-poziv="da" ajax-rezultat="ajaxDiv">@x.videoUrl</a></td>
+
+                            <td style="width: 24%">
+                                <a class="btn btn-light" asp-controller="Vjezbe" asp-action="Uredi" asp-route-id="@x.VjezbaId"> <i class="fas fa-edit "></i> Uredi</a>
+                                <a class="btn btn-light" asp-controller="Vjezbe" asp-action="Obrisi" asp-route-id="@x.VjezbaId"><i class="fas fa-minus "></i> Obrisi</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<a class="btn btn-info  col-md-2 font-sizes float-right" asp-controller="Vjezbe" asp-action="Dodaj" asp-route-id="@User.FindFirstValue(ClaimTypes.NameIdentifier)" style="float:right"><i class="fas fa-plus-circle"></i>Dodaj vjezbu</a>
+
+<div id="ajaxDiv">
+
+</div>

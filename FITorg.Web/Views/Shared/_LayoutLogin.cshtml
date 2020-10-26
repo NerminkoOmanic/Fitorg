@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+@using Microsoft.AspNetCore.Identity
+@using FITorg.Data.EntityModels
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<html lang="en">
+<head>
+    <title>Fitorg</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="~/LoginFront/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginFront/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginFront/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginFront/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginFront/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginFront/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginFront/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginFront/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginFront/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginFront/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/LoginFront/css/main.css">
+    <!--===============================================================================================-->
+
+
+</head>
+<body>
+
+
+    @RenderBody()
+
+
+    <!--===============================================================================================-->
+    <script src="~/LoginFront/vendor/jquery/jquery.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/LoginFront/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/LoginFront/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/LoginFront/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/LoginFront/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/LoginFront/vendor/daterangepicker/moment.min.js"></script>
+    <script src="~/LoginFront/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/LoginFront/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    
+    <script src="~/LoginFront/js/main.js"></script>
+    <script src="~/js/site.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

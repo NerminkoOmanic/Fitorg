@@ -1,0 +1,69 @@
+﻿@model FITorg.Web.Areas.TrUser.ViewModels.SportasiIndexVM
+@{
+    ViewData["Title"] = "Fitorg";
+    Layout = "_LayoutTrener";
+}
+
+@{
+    ViewData["Title"] = "Prikazi";
+    var porukaSuccess = (string)TempData["porukaSuccess"];
+    var porukaWarning = (string)TempData["porukaWarning"];
+    var porukaError = (string)TempData["porukaError"];
+}
+@if (porukaSuccess != null)
+{
+    <div class="alert alert-success" role="alert" id="porukaBox">
+        @porukaSuccess
+    </div>
+}
+@if (porukaWarning != null)
+{
+    <div class="alert alert-warning" role="alert" id="porukaBox">
+        @porukaWarning
+    </div>
+}
+@if (porukaError != null)
+{
+    <div class="alert alert-error" role="alert" id="porukaBox">
+        @porukaError
+    </div>
+}
+
+
+<h1>Lista sportasa</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th style="width: 20%">Ime i prezime</th>
+        <th style="width: 20%">E-mail</th>
+        <th style="width: 20%">Mob</th>
+        <th style="width: 20%">Grad</th>
+        <th style="width: 20%">Akcija</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var x in Model.Rows)
+    {
+        <tr>
+            <td>@x.ImePrezime</td>
+            <td>@x.Email</td>
+            <td>@x.Phone</td>
+            <td>@x.NazivGrada</td>
+            <td>
+                <a class="btn btn-warning" asp-controller="Sportasi" asp-action="Index"><i class="fas fa-edit icons-margin-right"></i>Uredi</a>
+                <a class="btn btn-danger" asp-controller="Sportasi" asp-action="Index"><i class="fas fa-delete icons-margin-right"></i>Obrisi</a>
+            </td>
+        </tr>
+    }
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <a class="btn btn-success" asp-area="" asp-controller="Sportasi" asp-action="Index" style="float:right"><i class="fas fa-plus-circle icons-margin-right"></i>Dodaj sportasa</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
