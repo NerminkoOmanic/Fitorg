@@ -2,7 +2,7 @@
 Faculty project for Software Develpment I (My part of project)
 
 Introduction
-Fitorg is a web app which provides trainers help in organization of their clients, provide help in organization and assiment of trainings. Also it helps to keep history of trainings for certain client.
+Fitorg is a web app which provides trainers help in organization of their clients, provide help in organization and assignment of trainings. Also it helps to keep history of trainings for certain client.
 
 Getting Started
 Fitorg is developed using Asp.Net  MVC. Database is set up with EntityFramework. Authorization and authentification is added thorough Identity Server 2WayAuthentification is also provided with Identity
