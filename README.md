@@ -12,7 +12,7 @@ Authorization and authentification is added thorough Identity Server.
 
 ## Build locally :
 1. Create database on your local SQL Server
-2. Edit connection string so it connects to database which is on your local SQL Server
+2. Edit [connection string](/Fitorg/FITorg.Web/appsettings.json) so it connects to database which is on your local SQL Server
 3. Migration of classes to database tables can be done using [EF Core](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=vs)
 4. Build application and test it locally
 
