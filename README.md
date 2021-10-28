@@ -1,5 +1,5 @@
 # Introduction
-Faculty project for course Software development I. This is just part of application with fully implemented administrator and partially trainers functionalities. Functionalities which should concern clients and part of trainers is not done because it was assignement for other student which did not finished it.
+Faculty project for course Software development I. This is just part of application with fully implemented administrator and partially trainers functionalities. Functionalities which should concern clients and part of trainers is not done because it was assignement for other student which did not finish it.
 Fitorg is a web app which provides trainers help in organization of their clients, provide help in organization and assignment of trainings. Keeps history of training for better analysis
 
 # Getting Started
