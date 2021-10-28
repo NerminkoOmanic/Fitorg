@@ -1,6 +1,3 @@
-# Fitorg
-Faculty project for Software Develpment I (My part of project)
-
 # Introduction
 Faculty project for course Software development I. This is just part of application with fully implemented administrator and partially trainers functionalities. Functionalities which should concern clients and part of trainers is not done because it was assignement for other student which did not finished it.
 Fitorg is a web app which provides trainers help in organization of their clients, provide help in organization and assignment of trainings. Keeps history of training for better analysis
@@ -20,7 +17,7 @@ Authorization and authentification is added thorough Identity Server.
 4. Build application and test it locally
 
 ## Test online
-Application is available at link [Fitorg](https://fitorg.azurewebsites.net/)
-Online you can register and test functionalities which are available for trainers
-For info to log in as **administrator** contact me over some of provided adresses on my profile.
+Application is available at link [Fitorg](https://fitorg.azurewebsites.net/)  
+Online you can register and test functionalities which are available for trainers  
+For info to log in as **administrator** contact me over some of provided adresses on my profile.  
 **NOTE: CI/CD is fully done over azure devops, access to azure devops project can be provided also**
