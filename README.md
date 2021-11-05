@@ -21,3 +21,41 @@ Application is available at link [Fitorg](https://fitorg.azurewebsites.net/)
 Online you can register and test functionalities which are available for trainers  
 For info to log in as **administrator** contact me over some of provided adresses on my profile.  
 **NOTE: CI/CD is fully done over azure devops, access to azure devops project can be provided also**
+
+
+# ScreenShots
+
+## Administrator
+
+Administrator's start page after log in  
+![AdminStart](/fitorgss/adminSettings.png)
+
+List of all administrators with options to edit(uredi) or delete(obriši) specific admin, also to add(dodaj admina) a new one 
+![AdminListAdmins](/fitorgss/adminListAdmins.png)
+
+List of all cities which are available to chose during registration. With options to edit(uredi), delete(obriši), add(dodaj grad)
+Administrator has also available lists of countries and genders with same controls on them like for cities
+![AdminListCities](/fitorgss/adminListCities.png)
+
+## Coach
+
+Coach's start page after log in with personal details and option to edit(uredi) them  
+![CoachStart](/fitorgss/TrenerStart.png)
+
+Coach's list of excercises, with options to edit(uredi), delete(obrisi) and add(dodaj vjezbu)   
+Coach can add video of excercise from youtube, and by clicking on link inside table it will open video under for watching  
+![Coachexcercises](/fitorgss/TrenerVjezbe.png)
+
+Coach's list of clients, add button is not implemented cause it was assignemenet of other student  
+![Coachexcercises](/fitorgss/TrenerListClients.png)
+
+## Change password
+
+Both administrator and coach can change their passwords  
+![ChangePassword](/fitorgss/adminChangePassword.png)
+
+## 2 factor authentification
+
+2FA is available for all users  
+![2FA](/fitorgss/admin2FA.png)
+![2FA](/fitorgss/admin2FAConfigure.png)
